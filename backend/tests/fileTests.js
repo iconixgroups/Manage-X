@@ -1,7 +1,9 @@
 ```javascript
 const request = require('supertest');
 const app = require('../server');
-const File = require('../models/File');
+const File = require('../models/file.model');
+const errorHandler = require('../utils/errorHandler');
+const { fileValidation } = require('../utils/validator');
 
 describe('File API endpoints', () => {
     let fileId;
