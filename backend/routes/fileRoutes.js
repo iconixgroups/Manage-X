@@ -4,7 +4,7 @@ const router = express.Router();
 const { protect } = require('../middleware/auth');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../utils/validator');
-const { uploadFile, getFile, deleteFile } = require('../controllers/fileController');
+const { uploadFile, getFile, deleteFile } = require('./fileController');
 
 router.post(
   '/api/files',
