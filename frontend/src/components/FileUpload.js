@@ -24,11 +24,23 @@ const FileUpload = () => {
 
       console.log(res.data);
     } catch (err) {
-      if (err.response.status === 500) {
-        console.log('There was a problem with the server');
-      } else {
-        console.log(err.response.data.msg);
+      let errorMessage = 'Failed to upload the file.';
+      if (err.response) {
+        switch(err.response.status) {
+          case 400:
+            errorMessage = 'Invalid file format or data.';
+            break;
+          case 404:
+            errorMessage = 'The requested resource was not found.';
+            break;
+          case 500:
+            errorMessage = 'There was a problem with the server.';
+            break;
+          default:
+            errorMessage = err.response.data.msg || errorMessage;
+        }
       }
+      console.log(errorMessage);
     }
   };
 
