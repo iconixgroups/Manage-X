@@ -1,0 +1,202 @@
+/* Main Stylesheet for Manage X SaaS App */
+
+/* Reset and Normalize */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+/* Header Styles */
+header {
+  background: #fff;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+#header-logo {
+  float: left;
+  margin-left: 2rem;
+}
+
+#header-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+#page-menu {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+#login-button,
+#signup-button {
+  float: right;
+  margin-right: 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#login-button {
+  background: transparent;
+  color: #333;
+}
+
+#signup-button {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Main Content Styles */
+.main-content {
+  padding: 2rem;
+}
+
+/* Section Styles */
+section {
+  margin-bottom: 2rem;
+}
+
+.product-showcase,
+.features-section,
+.benefits-section,
+.client-testimony-section,
+.pricing-section,
+.subscribe-newsletter-form-section,
+.contact-us-forms-section {
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+/* Form Styles */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button,
+select {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background: #28a745;
+  color: #fff;
+  border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #header-logo,
+  #header-title,
+  #page-menu,
+  #login-button,
+  #signup-button {
+    float: none;
+    display: block;
+    text-align: center;
+    margin: 0.5rem auto;
+  }
+
+  .main-content,
+  .product-showcase,
+  .features-section,
+  .benefits-section,
+  .client-testimony-section,
+  .pricing-section,
+  .subscribe-newsletter-form-section,
+  .contact-us-forms-section {
+    padding: 1rem;
+  }
+}
+
+/* Side Menu Styles */
+#side-menu {
+  background: #343a40;
+  color: #fff;
+  min-height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+#side-menu.open {
+  transform: translateX(0);
+}
+
+#user-profile-settings {
+  padding: 1rem;
+  border-top: 1px solid #eaeaea;
+}
+
+/* Footer Styles */
+footer {
+  background: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+/* Icons */
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'FontAwesome', 'Material Icons', 'Feather Icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-collapse::before {
+  content: "\f103"; /* FontAwesome arrow icon */
+}
+
+.icon-open::before {
+  content: "\f102"; /* FontAwesome arrow icon */
+}

@@ -1,0 +1,113 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Custom styles for Manage X SaaS App */
+/* Header styles */
+.header-logo {
+  @apply w-20 h-20;
+}
+
+.header-title {
+  @apply text-2xl font-bold;
+}
+
+.page-menu {
+  @apply flex justify-between items-center;
+}
+
+.login-button, .signup-button {
+  @apply px-4 py-2 border rounded text-white font-bold;
+}
+
+.login-button {
+  @apply bg-blue-500 hover:bg-blue-700;
+}
+
+.signup-button {
+  @apply bg-green-500 hover:bg-green-700;
+}
+
+/* Landing page sections */
+.product-showcase-section, .features-section, .benefits-section, .client-testimony-section, .pricing-section, .subscribe-newsletter-form-section, .contact-us-forms-section {
+  @apply my-8 p-4;
+}
+
+/* User onboarding flow */
+.sign-up-form, .login-form, .user-profile-settings, .workspace-overview, .project-details, .task-tree-view, .dashboard, .activity-log, .project-settings {
+  @apply p-4 border rounded shadow-lg my-4;
+}
+
+/* Side menu styles */
+.side-menu {
+  @apply bg-gray-800 text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out;
+}
+
+/* Footer styles */
+.footer {
+  @apply bg-gray-200 text-gray-600 p-4 text-center;
+}
+
+/* Utility classes for color codes */
+.text-maroon {
+  @apply text-red-800;
+}
+
+.text-grey {
+  @apply text-gray-500;
+}
+
+.text-yellow-green {
+  @apply text-green-300;
+}
+
+.text-red {
+  @apply text-red-500;
+}
+
+.text-dark-green {
+  @apply text-green-800;
+}
+
+/* Responsive design */
+@media (min-width: 640px) {
+  .header-logo {
+    @apply w-24 h-24;
+  }
+
+  .header-title {
+    @apply text-3xl;
+  }
+}
+
+/* Additional custom utilities */
+.custom-collapse-icon {
+  @apply cursor-pointer;
+}
+
+.custom-round-icon {
+  @apply rounded-full;
+}
+
+.custom-hex-color {
+  @apply text-xs;
+}
+
+/* Task form styles */
+.task-form {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+}
+
+.task-form input, .task-form select, .task-form button {
+  @apply p-2 border rounded;
+}
+
+/* Dashboard graph styles */
+.dashboard-graph {
+  @apply w-full h-64;
+}
+
+/* Activity log styles */
+.activity-log-entry {
+  @apply border-b py-2;
+}
