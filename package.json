@@ -1,0 +1,52 @@
+{
+  "name": "manage-x-saas-app",
+  "version": "1.0.0",
+  "description": "Manage X is a SaaS application with a beautiful UI/UX for user onboarding and project management.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-repository/manage-x-saas-app.git"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/your-repository/manage-x-saas-app/issues"
+  },
+  "homepage": "https://github.com/your-repository/manage-x-saas-app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "pg": "^8.5.1",
+    "socket.io": "^3.0.3",
+    "axios": "^0.21.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.0",
+    "redux": "^4.0.5",
+    "vue": "^3.0.2",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0",
+    "bootstrap": "^4.5.3",
+    "tailwindcss": "^2.0.1",
+    "material-ui": "^4.11.0",
+    "vuetify": "^2.3.10",
+    "ant-design": "^4.6.6",
+    "primereact": "^5.0.2",
+    "quasar-framework": "^1.14.7",
+    "font-awesome": "^5.15.1",
+    "material-icons": "^0.5.0",
+    "feather-icons": "^4.28.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}
