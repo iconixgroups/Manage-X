@@ -1,0 +1,99 @@
+@import "node_modules/shadcn-ui/dist/css/shadcn.min.css";
+
+/* Header Styles */
+#header-logo {
+    max-width: 120px;
+}
+#header-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+#page-menu {
+    display: flex;
+    justify-content: space-between;
+}
+#login-button, #signup-button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* User Profile Settings */
+#user-profile-settings {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Workspace & Project Forms */
+#workspace-create-form, #project-details-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Task Tree View */
+#task-tree-view {
+    list-style: none;
+    padding: 0;
+}
+
+/* Dashboard & Activity Log */
+#dashboard, #activity-log {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Project Settings */
+#project-settings {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Forms */
+#subscribe-newsletter-form, #contact-us-form {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+/* Sections */
+#client-testimony-section, #features-section, #benefits-section, #product-showcase-section, #pricing-section {
+    padding: 40px 20px;
+}
+
+/* Side Menu */
+#side-menu {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Footer */
+#footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #page-menu, #header-logo, #header-title {
+        flex-direction: column;
+        text-align: center;
+    }
+    #login-button, #signup-button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+.display-flex {
+    display: flex;
+}

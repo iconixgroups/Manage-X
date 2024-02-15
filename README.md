@@ -25,6 +25,7 @@ To get started with Manage X SaaS App, follow these steps:
 
 ```
 npm install
+npm install shadcn-ui
 ```
 
 4. Set up your environment variables by creating a `.env` file in the root directory with the following contents:
@@ -94,6 +95,9 @@ This will run all the unit tests defined in the `tests/` directory and output th
 - `models/`: Contains the Mongoose schemas for the database.
 - `config/`: Contains configuration files, such as the database connection.
 - `public/js/components/`: Vue or React components for the frontend.
+## Migration to Shadcn UI
+
+The Manage X SaaS App has migrated to using the Shadcn UI library for its UI components to enhance the user interface and experience. Developers should refer to the [Shadcn UI documentation](https://github.com/shadcn-ui/ui) for information on using and customizing UI components. The custom styles and overrides specific to this project are located in the `css/shadcn-ui-custom.css` file.
 - `public/js/store/`: Vuex or Redux store modules.
 - `public/js/utils/`: Utility functions and constants.
 - `public/js/plugins/`: Integration files for third-party services and libraries.
