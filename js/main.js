@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const footer = document.getElementById('footer');
 
     // Event listeners for buttons
-    loginButton.addEventListener('click', loginUser);
-    signupButton.addEventListener('click', registerUser);
-    userProfileSettings.addEventListener('click', updateUserProfile);
-    workspaceCreateForm.addEventListener('submit', createWorkspace);
-    projectDetailsForm.addEventListener('submit', addProject);
-    taskForm.addEventListener('submit', addTask);
-    projectSettings.addEventListener('submit', updateProjectCount);
+    loginButton.addEventListener('click', handleLogin);
+    signupButton.addEventListener('click', handleSignup);
+    userProfileSettings.addEventListener('click', handleUserProfileUpdate);
+    workspaceCreateForm.addEventListener('submit', handleWorkspaceCreation);
+    projectDetailsForm.addEventListener('submit', handleProjectAddition);
+    taskForm.addEventListener('submit', handleTaskAddition);
+    projectSettings.addEventListener('submit', handleProjectUpdate);
 
     // Toggle side menu
     sideMenu.addEventListener('click', toggleSideMenu);
@@ -132,4 +132,89 @@ function subscribeToNewsletter(event) {
 function submitContactForm(event) {
     event.preventDefault();
     console.log('Submitting contact form...');
+}
+import { validateLoginForm, validateSignupForm, validateUserProfileForm, validateWorkspaceForm, validateProjectForm, validateTaskForm } from './utils/validators.js';
+
+function handleLogin(event) {
+    event.preventDefault();
+    if (!validateLoginForm()) {
+        displayError('Invalid login form data');
+        return;
+    }
+    loginUser()
+        .then(() => displaySuccess('Logged in successfully'))
+        .catch(error => displayError(`Login failed: ${error.message}`));
+}
+
+function handleSignup(event) {
+    event.preventDefault();
+    if (!validateSignupForm()) {
+        displayError('Invalid signup form data');
+        return;
+    }
+    registerUser()
+        .then(() => displaySuccess('Registered successfully'))
+        .catch(error => displayError(`Registration failed: ${error.message}`));
+}
+
+function handleUserProfileUpdate(event) {
+    event.preventDefault();
+    if (!validateUserProfileForm()) {
+        displayError('Invalid profile form data');
+        return;
+    }
+    updateUserProfile()
+        .then(() => displaySuccess('Profile updated successfully'))
+        .catch(error => displayError(`Profile update failed: ${error.message}`));
+}
+
+function handleWorkspaceCreation(event) {
+    event.preventDefault();
+    if (!validateWorkspaceForm()) {
+        displayError('Invalid workspace form data');
+        return;
+    }
+    createWorkspace()
+        .then(() => displaySuccess('Workspace created successfully'))
+        .catch(error => displayError(`Workspace creation failed: ${error.message}`));
+}
+
+function handleProjectAddition(event) {
+    event.preventDefault();
+    if (!validateProjectForm()) {
+        displayError('Invalid project form data');
+        return;
+    }
+    addProject()
+        .then(() => displaySuccess('Project added successfully'))
+        .catch(error => displayError(`Project addition failed: ${error.message}`));
+}
+
+function handleTaskAddition(event) {
+    event.preventDefault();
+    if (!validateTaskForm()) {
+        displayError('Invalid task form data');
+        return;
+    }
+    addTask()
+        .then(() => displaySuccess('Task added successfully'))
+        .catch(error => displayError(`Task addition failed: ${error.message}`));
+}
+
+function handleProjectUpdate(event) {
+    event.preventDefault();
+    // Assuming project update does not require form validation
+    updateProjectCount()
+        .then(() => displaySuccess('Project count updated successfully'))
+        .catch(error => displayError(`Project update failed: ${error.message}`));
+}
+
+function displayError(message) {
+    // Placeholder for displaying error messages to the user
+    console.error(message);
+}
+
+function displaySuccess(message) {
+    // Placeholder for displaying success messages to the user
+    console.log(message);
 }
