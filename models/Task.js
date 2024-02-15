@@ -21,8 +21,8 @@ const taskSchema = new mongoose.Schema({
     required: true
   },
   tags: [{
-    text: String,
-    colorHexCode: String
+    text: { type: String, required: [true, 'Tag text is required'] },
+    colorHexCode: { type: String, required: [true, 'Color hex code is required'], match: [/^#([0-9A-F]{3}){1,2}$/i, 'Invalid hex color code'] }
   }],
   startDate: {
     type: Date,
@@ -49,9 +49,9 @@ const taskSchema = new mongoose.Schema({
     ref: 'User'
   }],
   files: [{
-    fileName: String,
-    filePath: String,
-    fileSize: Number
+    fileName: { type: String, required: [true, 'File name is required'] },
+    filePath: { type: String, required: [true, 'File path is required'], match: [/^(\/[a-zA-Z0-9_-]+)+$/, 'Invalid file path'] },
+    fileSize: { type: Number, required: [true, 'File size is required'], max: [20 * 1024 * 1024, 'File size exceeds limit'] }
   }],
   project: {
     type: mongoose.Schema.Types.ObjectId,
@@ -85,3 +85,20 @@ taskSchema.pre('remove', function(next) {
 const Task = mongoose.model('Task', taskSchema);
 
 module.exports = Task;
+taskSchema.pre('remove', async function(next) {
+  const task = this;
+  try {
+    // Reassign serial numbers
+    await Task.find({ serialNumber: { $gt: task.serialNumber } }).sort({ serialNumber: 1 }).cursor()
+      .eachAsync(async doc => {
+        doc.serialNumber -= 1;
+        await doc.save();
+      });
+
+    // Logic for archiving could be added here
+
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
