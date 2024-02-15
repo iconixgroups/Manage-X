@@ -11,6 +11,19 @@ const METABASE_SECRET_KEY = "YOUR_METABASE_SECRET_KEY";
  * @returns {string} The URL to be used as the src of an iframe.
  */
 function generateMetabaseIframeUrl(resourceId, params = {}) {
+  // Validate and sanitize inputs to prevent XSS and injection attacks
+  if (typeof resourceId !== 'number' || !Number.isInteger(resourceId) || resourceId < 0) {
+    throw new Error('Invalid resourceId: must be a positive integer.');
+  }
+  // Sanitize params object to ensure it contains only expected data types
+  const sanitizedParams = {};
+  for (const [key, value] of Object.entries(params)) {
+    if (typeof value === 'string' && /^[a-zA-Z0-9-_]+$/.test(value)) {
+      sanitizedParams[key] = value;
+    } else {
+      console.warn(`Skipping param ${key}: value is not a valid string.`);
+    }
+  }
   const payload = {
     resource: { dashboard: resourceId },
     params,
@@ -29,6 +42,10 @@ function generateMetabaseIframeUrl(resourceId, params = {}) {
  * @param {Object} params - Additional parameters for filtering the dashboard/report.
  */
 function embedMetabaseResource(resourceId, elementId, params = {}) {
+  // Validate and sanitize elementId to prevent XSS
+  if (typeof elementId !== 'string' || !/^[a-zA-Z0-9-_]+$/.test(elementId)) {
+    throw new Error('Invalid elementId: must be a valid string containing only letters, numbers, hyphens, or underscores.');
+  }
   const iframeUrl = generateMetabaseIframeUrl(resourceId, params);
   const iframeHtml = `<iframe src="${iframeUrl}" frameborder="0" width="800" height="600" allowtransparency></iframe>`;
 
