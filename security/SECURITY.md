@@ -14,8 +14,11 @@ This document outlines the security measures and practices adopted by the Manage
 ## Dependency Security
 - **Vulnerability Tracking**: We actively use tools like `npm audit` and `Snyk` to identify and mitigate vulnerabilities in our project dependencies.
 - **Regular Updates**: Dependencies are regularly updated to their latest versions to incorporate security patches and reduce the risk of vulnerabilities.
+## Shadcn UI Security Considerations
+- **Shadcn UI Library**: With the migration to Shadcn UI for our user interface components, it's crucial to ensure that the version used does not contain known vulnerabilities. We adhere to best practices for securely implementing UI components, including regular security audits and updates.
 
 ## Reporting Security Vulnerabilities
 We take the security of our application seriously. If you discover a security vulnerability within Manage X SaaS App, please report it to us responsibly by emailing security@managex.com. We commit to promptly investigating and addressing all reported vulnerabilities to maintain the security and integrity of our application.
 
 Thank you for supporting the security of Manage X SaaS App.
+- **Shadcn UI Security**: Ensure that the Shadcn UI library version is free from known vulnerabilities by regularly checking the official repository and security advisories. Follow the library's best practices for secure implementation of UI components.
