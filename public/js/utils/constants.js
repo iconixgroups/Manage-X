@@ -61,6 +61,25 @@ const DOM_ELEMENT_IDS = {
   HEADER_TITLE: 'header-title',
   PAGE_MENU: 'page-menu',
   LOGIN_BUTTON: 'login-button',
+// Enhanced Security Features
+// Maximum login attempts before locking out the user account
+const MAX_LOGIN_ATTEMPTS = 5;
+// Lock time in milliseconds after reaching maximum login attempts (e.g., 30 minutes)
+const LOCK_TIME = 30 * 60 * 1000; // 30 minutes
+
+export {
+  FREE_TRIAL_DAYS,
+  PAID_SUBSCRIPTION_PRICE,
+  USER_ROLES,
+  PROJECT_STATUSES,
+  TASK_STATUSES,
+  STATUS_COLOR_CODES,
+  FILE_SIZE_LIMIT,
+  API_ENDPOINTS,
+  DOM_ELEMENT_IDS,
+  MAX_LOGIN_ATTEMPTS,
+  LOCK_TIME
+};
   SIGNUP_BUTTON: 'signup-button',
   USER_PROFILE_SETTINGS: 'user-profile-settings',
   WORKSPACE_CREATE_FORM: 'workspace-create-form',
