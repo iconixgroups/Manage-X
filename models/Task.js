@@ -29,9 +29,11 @@ const taskSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator: function(value) {
-        return value <= new Date();
+        // Ensure startDate is not in the future and adheres to YYYY-MM-DD format for security and consistency
+        const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+        return value <= new Date() && dateRegex.test(value.toISOString().substring(0, 10));
       },
-      message: 'Start date cannot be in the future.'
+      message: 'Start date must be in YYYY-MM-DD format and cannot be in the future.'
     }
   },
   deadlineDate: {
