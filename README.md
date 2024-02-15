@@ -4,16 +4,16 @@ Welcome to the Manage X SaaS App, a comprehensive project management tool design
 
 ## Features
 
-- Mobile responsive one-page landing page
-- User onboarding with free trial or paid subscription options
-- Email verification and user profile settings
-- Workspace creation with customizable options
-- Project management with detailed settings
-- Task management with a tree list view and detailed task forms
-- Real-time updates on project and task counts
-- Interactive dashboard with graphical representations of project and task statuses
-- Activity logs for auditing user actions
-- Aesthetic design with a focus on user experience
+- **Mobile responsive one-page landing page**: A visually appealing landing page that is responsive on all devices, providing a seamless experience for users.
+- **User onboarding with free trial or paid subscription options**: Easy onboarding process with options for a 14-day free trial or a paid subscription, enhancing user acquisition.
+- **Email verification and user profile settings**: Ensures user authenticity through email verification and allows users to customize their profiles for a personalized experience.
+- **Workspace creation with customizable options**: Users can create workspaces with options to customize, such as setting a workspace name, color, and logo, facilitating organization and branding.
+- **Project management with detailed settings**: Comprehensive project management features, including the ability to add, edit, and manage projects with detailed settings.
+- **Task management with a tree list view and detailed task forms**: Efficient task management with a structured tree list view and detailed forms for task creation and editing.
+- **Real-time updates on project and task counts**: Dynamic updates on the number of projects and tasks, providing users with up-to-date information.
+- **Interactive dashboard with graphical representations of project and task statuses**: A dashboard featuring interactive graphs and charts for a visual representation of project and task progress.
+- **Activity logs for auditing user actions**: Detailed activity logs for tracking user actions, ensuring accountability and transparency.
+- **Aesthetic design with a focus on user experience**: A beautifully designed interface that prioritizes user experience, making project and task management enjoyable.
 
 ## Installation
 
@@ -29,6 +29,17 @@ npm install
 
 4. Set up your environment variables by creating a `.env` file in the root directory with the following contents:
 
+```
+DB_URI=mongodb://localhost:27017/manageX
+PORT=3000
+```
+## Security
+
+Our app implements robust security measures to protect user data and ensure a secure environment:
+- **Email Verification**: To confirm the authenticity of user accounts.
+- **Password Hashing**: Securely storing user passwords using advanced hashing algorithms.
+- **Input Validation**: Preventing malicious data entry by validating user inputs across the app.
+4. Set up your environment variables by creating a `.env` file in the root directory with the following contents:
 ```
 DB_URI=mongodb://localhost:27017/manageX
 PORT=3000
@@ -64,6 +75,18 @@ To use the Manage X SaaS App:
 - `js/`: Contains all the JavaScript files for frontend logic.
 - `images/`: Contains images used in the application.
 - `icons/`: Contains icon files for the UI.
+## Testing
+
+To ensure the quality and reliability of the Manage X SaaS App, we have implemented comprehensive unit testing. To run the tests, follow these steps:
+
+1. Ensure you are in the app directory.
+2. Run the following command to execute the unit tests:
+
+```
+npm test
+```
+
+This will run all the unit tests defined in the `tests/` directory and output the results, allowing you to verify the functionality of various components of the application.
 - `server.js`: The main entry point for the application's backend.
 - `app.js`: Sets up the Express application.
 - `routes/`: Contains all the route definitions for the API.
