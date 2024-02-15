@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function initUIComponents() {
     // Initialize Bootstrap components
     // Tooltip, Popover, Modal, Dropdown, etc.
-    $('[data-toggle="tooltip"]').tooltip();
-    $('[data-toggle="popover"]').popover();
+    // Shadcn UI does not require explicit initialization for basic components
+    // Custom initialization for Shadcn UI components if necessary
 
     // Initialize other UI components if necessary
     // For example, date pickers, sliders, etc.
