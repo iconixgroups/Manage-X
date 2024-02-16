@@ -6,7 +6,10 @@ const { logActivity } = require('./activityController');
 
 const addProject = async (req, res) => {
     try {
-        const { name, category, logo, colorHexCode, startDate, completionDate, status, boqFile, textTags, members } = req.body;
+        const { name, category, logo, colorCode, startDate, endDate, members } = req.body;
+        if (!name || !category || !logo || !colorCode || !startDate || !endDate) {
+            return res.status(400).json({ message: 'Missing required project fields' });
+        }
         const workspaceId = req.params.workspaceId;
         const workspace = await Workspace.findById(workspaceId);
 
@@ -48,11 +51,14 @@ const addProject = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
-
 const updateProject = async (req, res) => {
     try {
         const projectId = req.params.projectId;
-        const updates = req.body;
+        const { name, category, logo, colorCode, startDate, endDate, members } = req.body;
+        if (!name || !category || !logo || !colorCode || !startDate || !endDate) {
+            return res.status(400).json({ message: 'Missing required project fields' });
+        }
+        const updates = { name, category, logo, colorCode, startDate, endDate, members };
 
         const project = await Project.findByIdAndUpdate(projectId, updates, { new: true });
 
@@ -75,7 +81,19 @@ const updateProject = async (req, res) => {
     }
 };
 
+// Ensure JWT authentication
+const jwt = require('jsonwebtoken');
 const deleteProject = async (req, res) => {
+    // Verify JWT token
+    const token = req.headers.authorization.split(' ')[1];
+    if (!token) {
+        return res.status(401).json({ message: 'No token provided' });
+    }
+    try {
+        jwt.verify(token, process.env.JWT_SECRET);
+    } catch (error) {
+        return res.status(403).json({ message: 'Failed to authenticate token' });
+    }
     try {
         const projectId = req.params.projectId;
         const project = await Project.findByIdAndDelete(projectId);
@@ -107,6 +125,30 @@ const deleteProject = async (req, res) => {
 };
 
 const getProjectDetails = async (req, res) => {
+    try {
+        const projectId = req.params.projectId;
+        const project = await Project.findById(projectId).populate('members.user', 'firstName lastName email');
+
+        if (!project) {
+            return res.status(404).json({ message: 'Project not found' });
+        }
+
+        res.status(200).json(project);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+module.exports = {
+    addProject,
+    updateProject,
+    deleteProject,
+    getProjectDetails
+};
+        jwt.verify(token, process.env.JWT_SECRET);
+    } catch (error) {
+        return res.status(403).json({ message: 'Failed to authenticate token' });
+    }
     try {
         const projectId = req.params.projectId;
         const project = await Project.findById(projectId).populate('members.user', 'firstName lastName email');
