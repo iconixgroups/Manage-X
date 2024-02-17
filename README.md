@@ -64,12 +64,10 @@ To use the Manage X SaaS App:
 
 ## Dependencies
 
-- Frontend: React.js ^18.2.0 or Vue.js ^3.2.37, Bootstrap ^5.1.3, Tailwind CSS ^3.1.8, Material-UI ^5.8.7, Vuetify ^3.0.3
-- Backend: Node.js, Express.js ^4.18.1, MongoDB, PostgreSQL
-- Real-time features: Socket.IO ^4.4.1
+- Frontend: React.js or Vue.js, Bootstrap, Tailwind CSS, Material-UI, Vuetify
+- Backend: Node.js, Express.js, MongoDB, PostgreSQL
+- Real-time features: Socket.IO
 - Reporting: Metabase, Power BI
-
-It's crucial to regularly update dependencies for security enhancements and performance improvements.
 
 ## File Structure
 
