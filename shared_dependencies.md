@@ -53,35 +53,38 @@ Shared Dependencies:
    - `USER_REGISTERED`
    - `USER_LOGGED_IN`
    - `USER_PROFILE_UPDATED`
-   - `WORKSPACE_CREATED`
-   - `PROJECT_ADDED`
-   - `TASK_ADDED`
-   - `TASK_UPDATED`
-   - `TASK_DELETED`
-   - `MEMBER_INVITED`
-   - `MEMBER_ROLE_UPDATED`
-   - `ACTIVITY_LOG_UPDATED`
+   - `WORKSPACE_INITIALIZED`
+   - `PROJECT_CREATED`
+   - `TASK_CREATED`
+   - `TASK_MODIFIED`
+   - `TASK_REMOVED`
+   - `TEAM_MEMBER_INVITED`
+   - `TEAM_MEMBER_ROLE_CHANGED`
+   - `ACTIVITY_LOG_MODIFIED`
 
 5. **Function Names:**
-   - `registerUser`
-   - `loginUser`
-   - `updateUserProfile`
-   - `createWorkspace`
-   - `addProject`
-   - `addTask`
-   - `updateTask`
-   - `deleteTask`
-   - `inviteMember`
-   - `updateMemberRole`
-   - `logActivity`
-   - `validateEmail`
-   - `formatDate`
-   - `incrementTaskNumber`
-   - `updateProjectCount`
-   - `renderDonutGraph`
-   - `renderTrendGraph`
-   - `toggleSideMenu`
-   - `submitContactForm`
-   - `subscribeToNewsletter`
+   - `registerUserAccount`
+   - `authenticateUser`
+   - `refreshUserProfile`
+   - `initializeWorkspace`
+   - `createNewProject`
+   - `createNewTask`
+   - `modifyTaskDetails`
+   - `removeTask`
+   - `sendMemberInvitation`
+   - `changeMemberRole`
+   - `updateActivityLog`
+   - `checkEmailValidity`
+   - `convertDate`
+   - `incrementTaskCounter`
+   - `refreshProjectMetrics`
+   - `drawDonutChart`
+   - `drawTrendLine`
+   - `toggleNavigationMenu`
+   - `processContactRequest`
+   - `registerForNewsletter`
 
 These shared dependencies are the names of variables, schemas, DOM element IDs, message names, and function names that are likely to be used across multiple files in the application to ensure consistency and functionality.
+   - `generateReport`
+   - `applyDarkMode`
+   - `disconnectUser`
