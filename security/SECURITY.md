@@ -12,7 +12,7 @@ This document outlines the security measures and practices adopted by the Manage
 - **Password Security**: User passwords are hashed and salted using bcrypt, a robust hashing algorithm. This practice prevents password theft, even in the event of a data breach.
 
 ## Dependency Security
-- **Vulnerability Tracking**: We actively use tools like `npm audit`, `npm audit fix`, and `Snyk` to identify, mitigate, and automatically fix vulnerabilities in our project dependencies where possible.
+- **Vulnerability Tracking**: We actively use tools like `npm audit` and `Snyk` to identify and mitigate vulnerabilities in our project dependencies.
 - **Regular Updates**: Dependencies are regularly updated to their latest versions to incorporate security patches and reduce the risk of vulnerabilities.
 ## Shadcn UI Security Considerations
 - **Shadcn UI Library**: With the migration to Shadcn UI for our user interface components, it's crucial to ensure that the version used does not contain known vulnerabilities. We adhere to best practices for securely implementing UI components, including regular security audits and updates.
@@ -22,4 +22,3 @@ We take the security of our application seriously. If you discover a security vu
 
 Thank you for supporting the security of Manage X SaaS App.
 - **Shadcn UI Security**: Ensure that the Shadcn UI library version is free from known vulnerabilities by regularly checking the official repository and security advisories. Follow the library's best practices for secure implementation of UI components.
-- **Security Improvements through Dependency Updates**: The recent updates to our dependencies, including the Shadcn UI library, have significantly enhanced the security of our application by addressing known vulnerabilities and ensuring compatibility with the latest security standards.
